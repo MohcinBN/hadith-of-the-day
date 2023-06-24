@@ -11,11 +11,13 @@
         <div>
           <button class="btn btn-secondary border-0" @click="togglexplanation">
             <span v-if="!showExplanation">إظهار شرح الحديث</span>
-            <span v-else>إخفاء تفسير الحديث</span>
+            <span v-else>إخفاء شرح الحديث</span>
           </button>
         </div>
         <!--The hadith explanation-->
-        <p v-if="showExplanation && explanationIsExist" class="mt-3">{{ currentPost.explanation }}</p>
+        <p v-if="showExplanation && explanationIsExist" class="mt-3">
+          <a :href="currentPost.explanation" target="_blank"> شرح الحديث</a>
+        </p>
       </div>
       <div v-else>
         Loading...
