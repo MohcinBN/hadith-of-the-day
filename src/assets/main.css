@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap');
+body {
+    background-color: #ccc;
+    font-family: 'Noto Naskh Arabic', serif;
+}
+
+.selected-hadith p {
+    text-align: justify;
+    font-size: 1.25rem;
+    line-height: 1.8;
+}

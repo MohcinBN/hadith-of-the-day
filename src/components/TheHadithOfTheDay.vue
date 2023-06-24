@@ -1,15 +1,27 @@
 <template>
-<h1>The selected Hadith</h1>
 
 <div>
-    <div v-if="currentPost">
-      <h2>{{ currentPost.title }}</h2>
-      <p>{{ currentPost.body }}</p>
+    
+    <div class="col-lg-8 mx-auto">
+      <h1 class="text-end mb-5">الحديث المختار لليوم:</h1>
+      <div v-if="currentPost" class="selected-hadith px-3">
+        <!--The hadith body-->
+        <p>{{ currentPost.body }}</p>
+        <!--Toggle explanation-->
+        <div>
+          <button class="btn btn-secondary border-0" @click="togglexplanation">
+            <span v-if="!showExplanation">إظهار شرح الحديث</span>
+            <span v-else>إخفاء تفسير الحديث</span>
+          </button>
+        </div>
+        <!--The hadith explanation-->
+        <p v-if="showExplanation && explanationIsExist" class="mt-3">{{ currentPost.explanation }}</p>
+      </div>
+      <div v-else>
+        Loading...
+      </div>
     </div>
-    <div v-else>
-      Loading...
-    </div>
-  </div>
+</div>
 
 </template>
 <style>
@@ -23,6 +35,7 @@ export default {
   data() {
     return {
       currentPost: null,
+      showExplanation: false,
     };
   },
   mounted() {
@@ -30,8 +43,6 @@ export default {
   },
   methods: {
     fetchPost() {
-      // Make an API request to get the current post
-      // You can use axios or any other library for HTTP requests
       axios.get('http://localhost/hadith-api/index.php')
         .then(response => {
           this.currentPost = response.data;
@@ -40,6 +51,12 @@ export default {
           console.error(error);
         });
     },
+    explanationIsExist() {
+      this.currentPost.explanation.length > 0
+    },
+    togglexplanation() {
+      this.showExplanation = !this.showExplanation;
+    }
   },
 };
 </script>
