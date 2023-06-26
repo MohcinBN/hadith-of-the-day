@@ -20,5 +20,5 @@ $currentPost = $hadiths[$currentPostIndex];
 
 // Return the current post as JSON response
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: http://localhost:5173');
+header('Access-Control-Allow-Origin: https://hadithofday.com');
 echo json_encode($currentPost);

@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     fetchPost() {
-      axios.get('http://hadithofday.com/api/index.php')
+      axios.get('https://hadithofday.com/api/index.php')
         .then(response => {
           this.currentPost = response.data;
         })
