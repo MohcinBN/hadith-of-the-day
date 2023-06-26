@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap');
 body {
-    background-color: #ccc;
+    background-color: #DDDDDD;
     font-family: 'Noto Naskh Arabic', serif;
 }
 
@@ -8,4 +8,8 @@ body {
     text-align: justify;
     font-size: 1.25rem;
     line-height: 1.8;
+}
+
+a.navbar-brand, a.nav-link {
+    color: black;
 }

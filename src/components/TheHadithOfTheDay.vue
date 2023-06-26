@@ -3,7 +3,7 @@
 <div>
     
     <div class="col-lg-8 mx-auto">
-      <h1 class="text-end mb-5">الحديث المختار لليوم:</h1>
+      <h1 class="text-end mb-5 px-3">الحديث المختار لليوم:</h1>
       <div v-if="currentPost" class="selected-hadith px-3">
         <!--The hadith body-->
         <p>{{ currentPost.body }}</p>
