@@ -2,9 +2,11 @@
 
 <div>
     
-    <div class="col-lg-8 mx-auto">
-      <h1 class="text-end mb-5 px-3">الحديث المختار لليوم:</h1>
-      <div v-if="currentPost" class="selected-hadith px-3">
+    <div class="col-lg-8 mx-auto d-flex justify-content-start align-items-center">
+      <div>
+        <h1 class="text-end mb-5 px-3">الحديث المختار لليوم:</h1>
+      </div>
+      <div v-if="currentPost" class="selected-hadith px-3 pt-5">
         <!--The hadith body-->
         <p>{{ currentPost.body }}</p>
         <!--Toggle explanation-->
