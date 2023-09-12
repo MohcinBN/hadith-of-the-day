@@ -27,3 +27,4 @@ npm run dev
 ```sh
 npm run build
 ```
+also change the index inside dist to "/dist/assets" .. because we lost /dist/ in production after run build
